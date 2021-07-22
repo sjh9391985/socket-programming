@@ -20,7 +20,7 @@
     |       |     |--- chat.js
     |       |--- index.html
     |--- app.js
-<pre>
+</pre>
 
 3. scripts
 ```
