@@ -7,6 +7,7 @@ const server = http.createServer(app) // express server 가 http를 통해서 �
 
 const socketIO = require('socket.io');
 const io = socketIO(server) // socketIO에 server를 담아서 만들어줌
+const moment = require("moment");
 
 app.use(express.static(path.join(__dirname, "src")));
 
@@ -16,7 +17,13 @@ io.on("connection", (socket)=>{
     // chat.js 에서 보내는 메시지를 받음
     socket.on("chatting", (data) => {
         console.log(data);
-        io.emit("chatting", `반갑습니다. ${data}`)
+        const {name, msg } = data;
+        
+        io.emit("chatting", {
+            name: name,
+            msg: msg,
+            time: moment(new Date()).format("h:mm A")
+        })
     })
 
     console.log("연결이 이루어 졌습니다.");

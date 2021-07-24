@@ -6,7 +6,7 @@
     $ npm init -y
     $ npm i -D express
     $ npm i -D socket.io moment
-    $ npm i nodemon 
+    $ npm i -D nodemon 
 ```
 
 2. Project Directory
@@ -18,6 +18,8 @@
     |--- src
     |       |--- js
     |       |     |--- chat.js
+    |       |--- css
+    |       |     |--- style.css  
     |       |--- index.html
     |--- app.js
 </pre>
@@ -31,7 +33,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon app.js"
   },
   "keywords": [],
   "author": "",
@@ -39,10 +41,16 @@
   "devDependencies": {
     "express": "^4.17.1",
     "moment": "^2.29.1",
+    "nodemon": "^2.0.12",
     "socket.io": "^4.1.3"
   },
-  "dependencies": {
-    "nodemon": "^2.0.12"
-  }
+  "dependencies": {}
 }
 ```
+
+4. 내용요약
+<pre>
+- 바닐라 자바스크립트로 만들어 보는 채팅앱
+- socket.io 라이브러리를 사용하여 웹소켓 구현
+- node js 로 웹서버 구현, express 프레임워크 사용
+</pre>
